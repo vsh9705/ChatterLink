@@ -36,3 +36,7 @@ class MessageSerializer(serializers.ModelSerializer):
     def get_participants(self, obj):
         return UserListSerializer(obj.conversation.participants.all(), many=True).data
 
+class CreateMessageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Message
+        fields = ('conversation', 'content')
