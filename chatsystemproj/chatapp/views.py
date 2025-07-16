@@ -39,7 +39,7 @@ class ConversationListCreateView(generics.ListCreateAPIView):
         existing_conversation = Conversation.objects.filter(
             participants__id=participants_data[0]
             ).filter(
-                particpants__id=participants_data[1]
+                participants__id=participants_data[1]
             ).distinct()
         
         if existing_conversation.exists():
